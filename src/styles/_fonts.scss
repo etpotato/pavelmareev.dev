@@ -1,9 +1,35 @@
 @font-face {
-  font-family: Recursive;
+  font-family: Manrope;
   font-display: swap;
-  font-weight: 300 1000;
-  font-style: oblique 0deg 15deg;
+  font-style: normal;
+  font-weight: 400;
   src:
-    url("../fonts/Recursive_VF.woff2") format("woff2 supports variations"),
-    url("../fonts/Recursive_VF.woff2") format("woff2-variations");
+    local("ManropeRegular"),
+    local("Manrope-Regular"),
+    url("../fonts/Manrope-400.woff2") format("woff2"),
+    url("../fonts/Manrope-400.woff") format("woff");
+}
+
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  font-style: normal;
+  font-weight: 500;
+  src:
+    local("ManropeMedium"),
+    local("Manrope-Medium"),
+    url("../fonts/Manrope-500.woff2") format("woff2"),
+    url("../fonts/Manrope-500.woff") format("woff");
+}
+
+@font-face {
+  font-family: Manrope;
+  font-display: swap;
+  font-style: normal;
+  font-weight: 600;
+  src:
+    local("ManropeSemiBold"),
+    local("Manrope-SemiBold"),
+    url("../fonts/Manrope-600.woff2") format("woff2"),
+    url("../fonts/Manrope-600.woff") format("woff");
 }
