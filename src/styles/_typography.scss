@@ -1,0 +1,59 @@
+.h1 {
+  font-size: 3.2rem;
+  line-height: 1.25;
+}
+
+.h2,
+.h3 {
+  font-size: 2.4rem;
+  line-height: 1.33;
+}
+
+.p1 {
+  font-size: 1.8rem;
+  line-height: 1.67;
+}
+
+.p2 {
+  font-size: 1.6rem;
+  line-height: 1.625;
+}
+
+@include phablet {
+  .h1 {
+    font-size: 5rem;
+    line-height: 1.2;
+  }
+
+  .h2 {
+    font-size: 3.5rem;
+    line-height: 1.43;
+  }
+
+  .h3 {
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+}
+
+@include desktop {
+  .h1 {
+    font-size: 6rem;
+    line-height: 1.167;
+  }
+
+  .h2 {
+    font-size: 4rem;
+    line-height: 1.375;
+  }
+
+  .h3 {
+    font-size: 3rem;
+    line-height: 1.33;
+  }
+
+  .p2 {
+    font-size: 1.8rem;
+    line-height: 1.67;
+  }
+}
