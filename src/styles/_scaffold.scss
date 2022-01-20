@@ -1,12 +1,3 @@
-.page {
-  min-width: $mobile-width;
-  padding: $spacing-outer-mobile;
-
-  @include phablet {
-    padding: $spacing-outer-phablet;
-  }
-}
-
 .container {
   max-width: $content-max-width;
   padding: 0 $spacing-inner-mobile;

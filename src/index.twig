@@ -1,12 +1,13 @@
 {% extends './templates/base.twig' %}
 
-{% block title %}Page title{% endblock %}
+{% block title %}Павел Мареев. Фронтенд разработчик{% endblock %}
 
 {% block page %}
   <main class="page__main main">
-    <div class="container">
+    {% include './templates/blocks/lead.twig' %}
+    {# <div class="container">
       <h1 class="h1">Hello world</h1>
       <img src="./img/jpeg.jpg" width="300" height="300" alt="elephant">
-    </div>
+    </div> #}
   </main>
 {% endblock %}

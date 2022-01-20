@@ -1,0 +1,261 @@
+.header {
+  padding: $spacing-inner-mobile;
+  border-radius: $border-radius;
+  background-color: var(--bg);
+
+  @include phablet {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 32px;
+  }
+
+  @include laptop {
+    display: block;
+  }
+
+  @include desktop {
+    padding: $spacing-inner-desktop;
+  }
+}
+
+.header__lead {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+
+  @include phablet {
+    flex-flow: row wrap;
+    align-items: baseline;
+    justify-content: flex-start;
+  }
+
+  @include laptop {
+    display: block;
+  }
+}
+
+.header__lead-name {
+  display: block;
+  font-size: 2.2rem;
+  line-height: 1.36;
+  font-weight: 600;
+  white-space: nowrap;
+
+  @include phablet {
+    margin-right: 24px;
+  }
+
+  @include laptop {
+    margin-right: 0;
+    margin-bottom: 5px;
+    font-size: 2.5rem;
+    line-height: 1.4;
+  }
+
+  @include desktop {
+    font-size: 3rem;
+    line-height: 1.33;
+  }
+}
+
+.header__nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-width: $mobile-width;
+  padding: $spacing-outer-mobile;
+  background-color: var(--bg-base);
+  transform: translateY(-74px);
+  transition: transform 0.3s ease-in-out;
+
+  // z-index: 1;
+
+  &.active {
+    transform: translateY(0);
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    width: 28px;
+    height: $border-radius;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-image: url("../img/nav-frame-left.svg");
+  }
+
+  &::before {
+    left: 0;
+  }
+
+  &::after {
+    right: 0;
+    transform: rotateY(180deg);
+  }
+
+  @include laptop {
+    position: static;
+    padding: 0;
+    background-color: transparent;
+    transform: none;
+
+    &::before,
+    &::after {
+      display: none;
+    }
+  }
+}
+
+.header__nav-list {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 8px;
+  margin: 0;
+  padding: $spacing-outer-mobile;
+  border-radius: $border-radius;
+  background-color: var(--bg);
+  list-style: none;
+  overflow-x: auto;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include laptop {
+    display: block;
+    margin: 0 -#{$spacing-inner-mobile};
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+}
+
+.header__nav-item {
+  isolation: isolate;
+
+  @include laptop {
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.header__nav-link {
+  position: relative;
+  display: block;
+  padding: 15px $spacing-inner-mobile;
+  border-radius: $border-radius-sm;
+  font-size: 1.8rem;
+  line-height: 1.11;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius-sm;
+    background-color: var(--bg-invert);
+    opacity: 0%;
+    transform: scaleY(0);
+    transform-origin: 50% 100%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  &.active {
+    color: var(--text-invert);
+
+    &::before {
+      opacity: 100%;
+      transform: scaleY(1);
+    }
+  }
+
+  @include laptop {
+    max-width: max-content;
+    padding: 10px $spacing-inner-mobile;
+    font-size: 1.6rem;
+    line-height: 1.625;
+    transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+
+    &::before {
+      transform: none;
+    }
+
+    &.active {
+      transform: translateX($spacing-inner-mobile);
+
+      &::before {
+        opacity: 100%;
+      }
+    }
+  }
+
+  @include desktop {
+    padding: 15px $spacing-inner-mobile;
+    font-size: 1.8rem;
+    line-height: 1.67;
+  }
+}
+
+.header__contact-list {
+  display: none;
+  isolation: isolate;
+
+  @include laptop {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.header__contact-item {
+  margin-right: 24px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include laptop {
+    margin-right: 32px;
+  }
+}
+
+.header__contact-link {
+  color: inherit;
+  text-decoration: none;
+
+  @media (hover: hover) {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background-color: currentColor;
+      transition: width 0.3s ease-in-out;
+    }
+
+    &:hover::before,
+    &:focus::before {
+      width: 100%;
+    }
+  }
+}

@@ -1,7 +1,56 @@
+{% import '../macros.twig' as macros %}
+
+{% set navItems = [
+  {
+    name: "Технологии и навыки",
+    id: "skills",
+  },
+  {
+    name: "Проекты",
+    id: "projects",
+  },
+  {
+    name: "Опыт работы",
+    id: "resume",
+  },
+  {
+    name: "Контакты",
+    id: "contacts",
+  },
+] %}
+
+{% set contactItems = [
+  {
+    href: "mailto:mareev.pv@gmail.com",
+    name: "mareev.pv@gmail",
+  },
+  {
+    href: "https://t.me/etpotato",
+    name: "telegram",
+  },
+] %}
+
 <header class="page__header header">
-  <div class="container">
-    <a class="logo header__logo" href="" target="_blank">
-      <img class="logo__image" width="55" height="12">
-    </a>
-  </div>
+  <p class="header__lead">
+    <span class="header__lead-name">Павел Мареев</span>
+    <span class="header__lead-job p2">frontend developer</span>
+  </p>
+  <nav class="header__nav">
+    <ul class="header__nav-list">
+      {% for item in navItems %}
+        <li class="header__nav-item">
+          <a class="header__nav-link{{ loop.first ? " active" : "" }}" href="#{{ item.id }}">
+            {{ item.name }}
+          </a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+  <ul class="header__contact-list">
+    {% for contactItem in contactItems %}
+      <li class="header__contact-item">
+        {{ macros.extlink("header__contact-link p2", contactItem.href, contactItem.name) }}
+      </li>
+    {% endfor %}
+  </ul>
 </header>

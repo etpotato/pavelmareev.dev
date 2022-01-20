@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
   background-color: var(--bg-base);
@@ -13,4 +19,12 @@ body {
 
 img {
   max-width: 100%;
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+.rounded-sm {
+  border-radius: 10px;
 }
