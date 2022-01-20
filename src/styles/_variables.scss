@@ -1,7 +1,22 @@
 :root {
   // colors
-  --text-basic: #000;
-  --bg-basic: #edecea;
+
+  // text
+  --text: #000;
+  --text-neutral: #8e8e8c;
+  --text-invert: #fff;
+  --text-invert-neutral: #999;
+
+  // skill icons
+  --skill-fill: #272727;
+  --skill-bg: #dfdfdf;
+
+  // border
+  --border: #cccbc9;
+
+  // background
+  --bg: #edecea;
+  --bg-invert: #272727;
   --bg-base: #fff;
 }
 
