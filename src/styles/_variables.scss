@@ -1,3 +1,24 @@
 :root {
-  --container-width: 800px;
+  // colors
+  --text-basic: #000;
+  --bg-basic: #edecea;
+  --bg-base: #fff;
 }
+
+// breakpoints
+$mobile-width: 320px;
+$phablet-width: 768px;
+$tablet-width: 1024px;
+$laptop-width: 1280px;
+$desktop-width: 1600px;
+
+// containers
+$content-max-width: 1404px;
+
+// spacing
+$spacing-outer-mobile: 8px;
+$spacing-outer-phablet: 12px;
+$spacing-inner-mobile: 20px;
+$spacing-inner-phablet: 32px;
+$spacing-inner-desktop: 40px;
+$spacing-first-line: 44px;
