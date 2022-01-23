@@ -1,5 +1,30 @@
 .section {
-  height: 100vh;
+  padding-right: $spacing-inner-mobile;
+  padding-left: $spacing-inner-mobile;
   border-radius: $border-radius;
   background-color: var(--bg);
+
+  &--accent {
+    background-color: var(--bg-invert);
+  }
+
+  @include phablet {
+    padding-right: $spacing-inner-phablet;
+    padding-left: $spacing-inner-phablet;
+  }
+
+  @include desktop {
+    padding-right: $spacing-inner-desktop;
+    padding-left: $spacing-inner-desktop;
+  }
 }
+
+.section__content {
+  max-width: $content-max-width;
+  margin: 0 auto;
+}
+
+$spacing-inner-mobile: 20px;
+$spacing-inner-phablet: 32px;
+$spacing-inner-desktop: 40px;
+$spacing-first-line: 44px;

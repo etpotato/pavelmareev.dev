@@ -1,17 +1,45 @@
 .header {
+  padding-right: $avatar-size + $spacing-outer-mobile;
+
+  @include phablet {
+    padding-right: 0;
+  }
+
+  @include laptop {
+    padding: $spacing-outer-phablet;
+    overflow-y: auto;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.header__wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: max-content;
+  min-height: $avatar-size;
   padding: $spacing-inner-mobile;
   border-radius: $border-radius;
   background-color: var(--bg);
 
   @include phablet {
-    display: flex;
+    flex-direction: row;
     align-items: baseline;
     justify-content: space-between;
-    padding: 32px;
+    min-width: auto;
+    min-height: auto;
+    padding: $spacing-inner-phablet;
   }
 
   @include laptop {
-    display: block;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    align-items: center;
+    min-height: 100%;
   }
 
   @include desktop {
@@ -70,8 +98,7 @@
   background-color: var(--bg-base);
   transform: translateY(-74px);
   transition: transform 0.3s ease-in-out;
-
-  // z-index: 1;
+  z-index: 1;
 
   &.active {
     transform: translateY(0);
@@ -100,7 +127,7 @@
 
   @include laptop {
     position: static;
-    padding: 0;
+    padding: 115px 0;
     background-color: transparent;
     transform: none;
 
@@ -130,7 +157,8 @@
 
   @include laptop {
     display: block;
-    margin: 0 -#{$spacing-inner-mobile};
+    margin: 0;
+    margin-left: -#{$spacing-inner-mobile};
     padding: 0;
     border-radius: 0;
     background-color: transparent;
@@ -183,6 +211,18 @@
     }
   }
 
+  @media (hover: hover) {
+    &:hover,
+    &:focus {
+      color: var(--text-invert);
+
+      &::before {
+        opacity: 100%;
+        transform: scaleY(1);
+      }
+    }
+  }
+
   @include laptop {
     max-width: max-content;
     padding: 10px $spacing-inner-mobile;
@@ -201,6 +241,17 @@
         opacity: 100%;
       }
     }
+
+    @media (hover: hover) {
+      &:hover,
+      &:focus {
+        transform: translateX($spacing-inner-mobile);
+
+        &::before {
+          opacity: 100%;
+        }
+      }
+    }
   }
 
   @include desktop {
@@ -212,9 +263,8 @@
 
 .header__contact-list {
   display: none;
-  isolation: isolate;
 
-  @include laptop {
+  @include phablet {
     display: flex;
     flex-wrap: wrap;
     margin: 0;

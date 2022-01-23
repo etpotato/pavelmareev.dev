@@ -15,9 +15,10 @@
       position: fixed;
       top: 0;
       right: 0;
-      left: 414px;
+      left: 0;
       height: $spacing-outer-phablet;
       background-color: var(--bg-base);
+      z-index: 1;
     }
 
     &::after {
@@ -25,12 +26,20 @@
       position: fixed;
       top: $spacing-outer-phablet;
       right: 4px;
-      left: 416px;
+      left: 4px;
       height: $border-radius;
-      background-repeat: no-repeat, no-repeat;
-      background-size: 28px $border-radius, 28px $border-radius;
-      background-position: left center, right center;
-      background-image: url("../img/nav-frame-left.svg"), url("../img/nav-frame-right.svg");
+      background-repeat: no-repeat;
+      background-size: 28px $border-radius;
+      background-position:
+        left center,
+        left 388px center,
+        left 412px center,
+        right center;
+      background-image:
+        url("../img/nav-frame-left.svg"),
+        url("../img/nav-frame-right.svg"),
+        url("../img/nav-frame-left.svg"),
+        url("../img/nav-frame-right.svg");
     }
   }
 }
@@ -44,10 +53,22 @@
 
   @include laptop {
     position: fixed;
-    top: $spacing-outer-phablet;
-    bottom: $spacing-outer-phablet;
-    left: $spacing-outer-phablet;
-    width: 400px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 400px + ($spacing-outer-phablet * 2);
     margin-bottom: 0;
+  }
+}
+
+.main__section {
+  margin-bottom: $spacing-outer-mobile;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include phablet {
+    margin-bottom: $spacing-outer-phablet;
   }
 }

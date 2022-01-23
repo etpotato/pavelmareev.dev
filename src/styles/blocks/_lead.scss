@@ -1,0 +1,136 @@
+.lead {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 12.6rem;
+
+  @include phablet {
+    position: static;
+    padding-top: 3.2rem;
+    padding-bottom: 14rem;
+  }
+
+  @include desktop {
+    padding-top: 4rem;
+    padding-bottom: 19rem;
+  }
+}
+
+.lead__content {
+  @include phablet {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.lead__title {
+  margin-top: 0;
+  margin-bottom: 4rem;
+
+  @include phablet {
+    grid-column: 1 / -1;
+  }
+
+  @include laptop {
+    margin-top: max(4.2rem, (100vh - 55.4rem) / 2);
+  }
+
+  @include desktop {
+    grid-column: 1 / 4;
+    margin-top: max(-3rem, (100vh - 76.8rem) / 2);
+    margin-bottom: 0;
+    padding-right: 1em;
+  }
+}
+
+.lead__picture {
+  @include phablet {
+    order: -1;
+    grid-column: 3 / span 1;
+    margin-bottom: 32px;
+  }
+
+  @include laptop {
+    margin-bottom: 44px;
+    margin-bottom: 0;
+  }
+
+  @include desktop {
+    grid-column: 4 / span 1;
+  }
+}
+
+.lead__img {
+  position: absolute;
+  top: -$spacing-outer-mobile;
+  right: 0;
+  display: block;
+  width: $avatar-size;
+  height: $avatar-size;
+  border-radius: 50%;
+  transform: translateY(-100%);
+
+  @include phablet {
+    position: static;
+    transform: none;
+  }
+
+  @include desktop {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+.lead__text {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: 0;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: currentColor;
+    transform: translateY(50%);
+  }
+
+  @include phablet {
+    grid-column: 3 / -1;
+  }
+
+  @include desktop {
+    grid-column: 4 / -1;
+    grid-row: 2 / span 1;
+    margin-top: max(80px, (100vh - 554px) / 2);
+
+    &::before {
+      bottom: -90px;
+    }
+  }
+}
+
+.lead__parag {
+  margin-top: 0;
+  margin-bottom: 3rem;
+
+  &::before {
+    display: inline-block;
+    content: "";
+    width: $spacing-first-line;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include phablet {
+    &::before {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    margin-bottom: 40px;
+  }
+}
