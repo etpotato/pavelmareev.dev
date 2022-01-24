@@ -1,0 +1,70 @@
+{% set techItems = [
+  {
+    name: 'React',
+    src: 'img/react.svg',
+  },
+  {
+    name: 'Redux',
+    src: 'img/redux.svg',
+  },
+  {
+    name: 'Typescript',
+    src: 'img/ts.svg',
+  },
+  {
+    name: 'Next.js',
+    src: 'img/nextjs.svg',
+  },
+  {
+    name: 'Jest',
+    src: 'img/jest.svg',
+  },
+  {
+    name: 'Webpack',
+    src: 'img/webpack.svg',
+  },
+  {
+    name: 'Gulp',
+    src: 'img/gulp.svg',
+  },
+  {
+    name: 'Git',
+    src: 'img/git.svg',
+  },
+  {
+    name: 'Post CSS',
+    src: 'img/postcss.svg',
+  },
+  {
+    name: 'Javascript',
+    src: 'img/js.svg',
+  },
+  {
+    name: 'Bootstrap',
+    src: 'img/bootstrap.svg',
+  },
+  {
+    name: 'Sass',
+    src: 'img/sass.svg',
+  },
+]%}
+
+<section class="main__section section tech" id="tech">
+  <div class="section__content tech__content">
+    <h2 class="tech__title h2">Владею популярными технологиями и&nbsp;инструментами</h2>
+    <div class="tech__wrap">
+      <ul class="tech__icon-list">
+        {% for techItem in techItems %}
+          <li class="tech__icon-item" title="{{ techItem.name }}">
+            <img class="tech__icon-img" src="{{ techItem.src }}" width="38" height="38" alt="{{ techItem.name }}">
+          </li>
+        {% endfor %}
+      </ul>
+      <ul class="tech__name-list">
+        {% for techItem in techItems %}
+          <li class="tech__name-item p2">{{ techItem.name }}{{ loop.last ? "" : ", " }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

@@ -1,17 +1,17 @@
 .lead {
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 12.6rem;
+  padding-top: 40px;
+  padding-bottom: 126px;
 
   @include phablet {
     position: static;
-    padding-top: 3.2rem;
-    padding-bottom: 14rem;
+    padding-top: 32px;
+    padding-bottom: 140px;
   }
 
   @include desktop {
-    padding-top: 4rem;
-    padding-bottom: 19rem;
+    padding-top: 40px;
+    padding-bottom: 190px;
   }
 }
 
@@ -24,19 +24,19 @@
 
 .lead__title {
   margin-top: 0;
-  margin-bottom: 4rem;
+  margin-bottom: 40px;
 
   @include phablet {
     grid-column: 1 / -1;
   }
 
   @include laptop {
-    margin-top: max(4.2rem, (100vh - 55.4rem) / 2);
+    margin-top: max(42px, (100vh - 554px) / 2);
   }
 
   @include desktop {
     grid-column: 1 / 4;
-    margin-top: max(-3rem, (100vh - 76.8rem) / 2);
+    margin-top: max(-30px, (100vh - 768px) / 2);
     margin-bottom: 0;
     padding-right: 1em;
   }
@@ -112,7 +112,7 @@
 
 .lead__parag {
   margin-top: 0;
-  margin-bottom: 3rem;
+  margin-bottom: 30px;
 
   &::before {
     display: inline-block;
