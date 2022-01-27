@@ -5,6 +5,7 @@
   background-color: var(--bg);
 
   &--accent {
+    color: var(--text-invert-neutral);
     background-color: var(--bg-invert);
   }
 

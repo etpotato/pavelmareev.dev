@@ -1,0 +1,123 @@
+{% import '../macros.twig' as macros %}
+
+{% set projects = [
+  {
+    name: 'lenta.ru',
+    desc: 'Редизайн десктоп-версии, поддержка и&nbsp;развитие сайта одного из&nbsp;самых посещаемых новостных изданий.',
+    link: 'https://lenta.ru/',
+    img: {
+      mobile: 'img/lenta-mobile.svg',
+      desktop: 'img/lenta-desktop.svg',
+    },
+  },
+  {
+    name: 'Сайт дистрибьютера катеров для вейксёрфинга',
+    desc: 'Фронтенд-разработка каталога катеров. Адаптивная верстка, анимации, декоративные элементы интерфейса',
+    link: 'https://rocketwake.co/',
+    img: {
+      mobile: 'img/rocketwake-mobile.jpg',
+      desktop: 'img/rocketwake-desktop.jpg',
+      webpMobile: 'img/rocketwake-mobile.webp',
+      webpDesktop: 'img/rocketwake-desktop.webp',
+    },
+  },
+  {
+    name: 'Сайт юридической фирмы',
+    desc: 'Отзывчивая вёрстка, интерактивные элементы, анимации микровзаимодействия, кастомизация карты. Валидация и&nbsp;отправка формы обратной связи.',
+    link: 'https://xn--d1ab0bt.xn--p1ai/',
+    img: {
+      mobile: 'img/ecsd-mobile.jpg',
+      desktop: 'img/ecsd-desktop.jpg',
+      webpMobile: 'img/ecsd-mobile.webp',
+      webpDesktop: 'img/ecsd-desktop.webp',
+    },
+  },
+  {
+    name: 'Монитор курсов криптовалюты',
+    desc: 'React, Typescript, WebSocket API, Bootstrap. Реализация глобального состояния с&nbsp;использованием React Context API.',
+    link: 'https://etpotato.github.io/ws-demo-app/',
+    img: {
+      mobile: 'img/crypto-mobile.jpg',
+      desktop: 'img/crypto-desktop.jpg',
+      webpMobile: 'img/crypto-mobile.webp',
+      webpDesktop: 'img/crypto-desktop.webp',
+    },
+  },
+  {
+    name: 'Фотогалерея',
+    desc: 'React-приложение для поиска и&nbsp;скачивания фотографий. Атаптивная сетка, бесконечный скролл, React Router, Bootstrap, API библиотеки фотографий.',
+    link: 'https://etpotato.github.io/gallery-react/',
+    img: {
+      mobile: 'img/gallery-mobile.jpg',
+      desktop: 'img/gallery-desktop.jpg',
+      webpMobile: 'img/gallery-mobile.webp',
+      webpDesktop: 'img/gallery-desktop.webp',
+    },
+  },
+  {
+    name: 'Лендинг сервиса строительных услуг',
+    desc: 'Тёмная/светлая тема в&nbsp;зависимости от&nbsp;предпочтения устройства пользователя. Интеграция сервера с&nbsp;телеграм-ботом для получения и&nbsp;обработки заявок.',
+    link: 'https://xn--24-1lcpbdde.xn--p1ai/',
+    img: {
+      mobile: 'img/prokop-mobile.jpg',
+      desktop: 'img/prokop-desktop.jpg',
+      webpMobile: 'img/prokop-mobile.webp',
+      webpDesktop: 'img/prokop-desktop.webp',
+    },
+  },
+]%}
+
+<section class="main__section section section--accent projects" id="projects">
+  <div class="section__content projects__content">
+    <div class="projects__title-wrap">
+      <h2 class="projects__title h2">Список моих проектов</h2>
+      <p class="projects__time">
+        <time class="projects__time-start p2" datetime="2021">2021</time> &mdash; <time class="projects__time-start p2" datetime="2022">2022</time>
+      </p>
+    </div>
+    <ul class="projects__list">
+      {% for project in projects %}
+        <li class="projects__item">
+          <article class="projects__item-article">
+            <h3 class="projects__item-title">
+              <span class="projects__item-counter"></span>
+              <span class="projects__item-title-text h3">{{ project.name }}</span>
+            </h3>
+            <p class="projects__item-desc">{{ project.desc }}</p>
+            <picture class="projects__item-picture">
+              {% if loop.first %}
+                <source
+                  media="(min-width: 768px)"
+                  srcset="{{ project.img.desktop }}">
+              {% else %}
+                <source
+                  media="(min-width: 768px)"
+                  type="img/webp"
+                  srcset="{{ project.img.webpDesktop }}">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="{{ project.img.desktop }}">
+                <source
+                  type="img/webp"
+                  srcset="{{ project.img.webpMobile }}">
+              {% endif %}
+              <img
+                class="projects__item-img"
+                src="{{ project.img.mobile }}"
+                alt="{{ projects.name }}">
+            </picture>
+            {% set linkContent = '<span class="projects__item-button p2">Перейти на сайт <span class="projects__item-arrows">
+                  <span class="projects__item-arrows-wrap">
+                    <svg class="projects__item-arrow-svg"><use href="#svg-arrow"></use></svg>
+                    <svg class="projects__item-arrow-svg"><use href="#svg-arrow"></use></svg>
+                  </span>
+                </span>
+              </span>'
+            %}
+            {{ macros.extlink('projects__item-link', project.link, linkContent) }}
+          </article>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
