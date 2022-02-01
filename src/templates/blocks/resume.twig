@@ -1,0 +1,77 @@
+{% import '../macros.twig' as macros %}
+
+{% set jobs = [
+  {
+    name: 'Rambler, Lenta.ru',
+    href: 'https://lenta.ru/',
+    link: 'lenta.ru',
+    position: 'Frontend-разработчик',
+    start: 'Сентябрь 2021',
+    end: 'по&nbsp;наст. время',
+    experience: '5&nbsp;месяцев',
+    taskTitle: 'Чем я&nbsp;занимаюсь в&nbsp;ленте',
+    tasks: [
+      'Редизайн десктопной версии сайта',
+      'Поддержка мобильной версии (React.js)',
+      'Интеграция в&nbsp;проект сторонних сервисов&nbsp;&mdash; авторизация пользователя, метрики, озвучка текста, реклама, комментарии, шаринги',
+      'Рефакторинг и&nbsp;оптимизация кода',
+      'Git-flow',
+      'Код ревью',
+      'Jira, Kanban, Scrum и&nbsp;вообще Agile',
+    ],
+  },
+  {
+    name: 'iBrush',
+    href: 'https://www.ibrush.ru/',
+    link: 'ibrush.ru',
+    position: 'Frontend-разработчик',
+    start: 'Апрель 2021',
+    end: 'Сентябрь 2021',
+    experience: '6 месяцев',
+    taskTitle: 'Чему я&nbsp;научился в&nbsp;студии',
+    tasks: [
+      'Разработка и&nbsp;поддержка проектов с&nbsp;обширным стеком технологий',
+      'Создание и&nbsp;конфигурация систем сборки фронтенда',
+      'Декомпозиция и&nbsp;оценка задач, логирование времени',
+      'Быстрое переключение между задачами',
+      'Взаимодействие с&nbsp;коллегами и&nbsp;совместное принятие решений',
+      'Поддержка и&nbsp;рефактор легаси-кода',
+    ],
+  },
+]%}
+
+<section class="main__section section resume" id="resume">
+  <div class="section__content resume__content">
+    <div class="resume__title-wrap">
+      <h2 class="resume__title h2">Опыт работы</h2>
+      <p class="resume__experience p2">1 год и 5 месяцев</p>
+    </div>
+    <ul class="resume__list">
+      {% for job in jobs %}
+        <li class="resume__item">
+          <h3 class="resume__item-title p1">{{ job.name }}</h3>
+          {{ macros.extlink('resume__item-link p2', job.href, job.link) }}
+          <p class="resume__position p1">{{ job.position }}</p>
+          <p class="resume__time p2">
+            <span class="resume__time-boundaries">
+              <span class="resume__time-start">{{ job.start }}&nbsp;&mdash;</span>
+              <span class="resume__time-end">{{ job.end }}</span>
+            </span>
+            <span class="resume__item-experience">{{ job.experience }}</span>
+          </p>
+          <div class="resume__task-wrap">
+            <button class="resume__task-button" type="button">{{ job.taskTitle }}</button>
+            <ul class="resume__task-list">
+              {% for task in job.tasks %}
+                <li class="resume__task-item p2">{{ task }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    <div class="resume__link-wrap">
+      {{ macros.extlink('resume__link p2', 'https://hh.ru/resume/e2a4d560ff08e782840039ed1f62357241794f', 'Резюме на&nbsp;хэдхантере') }}
+    </div>
+  </div>
+</section>
