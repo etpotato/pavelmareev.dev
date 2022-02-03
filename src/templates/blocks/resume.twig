@@ -6,7 +6,7 @@
     href: 'https://lenta.ru/',
     link: 'lenta.ru',
     position: 'Frontend-разработчик',
-    start: 'Сентябрь 2021',
+    start: 'Октябрь 2021',
     end: 'по&nbsp;наст. время',
     experience: '5&nbsp;месяцев',
     taskTitle: 'Чем я&nbsp;занимаюсь в&nbsp;ленте',
@@ -44,7 +44,7 @@
   <div class="section__content resume__content">
     <div class="resume__title-wrap">
       <h2 class="resume__title h2">Опыт работы</h2>
-      <p class="resume__experience p2">1 год и 5 месяцев</p>
+      <p class="resume__experience p2 js-timer" data-timer-start="2021-04">1 год</p>
     </div>
     <ul class="resume__list">
       {% for job in jobs %}
@@ -57,7 +57,12 @@
               <span class="resume__time-start">{{ job.start }}&nbsp;&mdash;</span>
               <span class="resume__time-end">{{ job.end }}</span>
             </span>
-            <span class="resume__item-experience">{{ job.experience }}</span>
+            {% if loop.first %}
+              <span class="resume__item-experience js-timer" data-timer-start="2021-10">
+            {% else %}
+              <span class="resume__item-experience">
+            {% endif %}
+            {{ job.experience }}</span>
           </p>
           <div class="resume__task-wrap">
             <button class="resume__task-button" type="button">{{ job.taskTitle }}</button>

@@ -1,6 +1,6 @@
 import './index.twig';
 import './styles/index.scss';
 
-import log from './scripts/logger';
+import initTimers from './scripts/timer';
 
-log('executed from index');
+initTimers();
