@@ -2,9 +2,9 @@
   "private": true,
   "scripts": {
     "start": "webpack serve",
-    "watch": "webpack --watch",
-    "build": "cross-env NODE_ENV=production webpack",
-    "build-dev": "webpack",
+    "test": "jest --watch",
+    "build": "cross-env NODE_ENV=production webpack & jest",
+    "build-dev": "webpack & jest",
     "stats": "cross-env NODE_ENV=production webpack --json build-stats.json"
   },
   "devDependencies": {
@@ -17,9 +17,11 @@
     "eslint": "^8.7.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.4",
+    "eslint-plugin-jest": "^26.0.0",
     "eslint-webpack-plugin": "^3.1.0",
     "html-loader": "^3.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.0",
     "mini-css-extract-plugin": "^2.4.4",
     "postcss": "^8.3.11",
     "postcss-loader": "^6.2.0",

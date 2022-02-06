@@ -3,4 +3,6 @@ import './styles/index.scss';
 
 import initTimers from './scripts/timer';
 
-initTimers();
+const today = new Date();
+
+initTimers(today);
