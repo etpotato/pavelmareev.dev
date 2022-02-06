@@ -61,3 +61,47 @@
     transform: translateY(100%);
   }
 }
+
+.resume__list {
+  margin: 0;
+  margin-bottom: 25px;
+  padding: 0;
+  list-style: none;
+
+  @include phablet {
+    margin-bottom: 45px;
+  }
+
+  @include desktop {
+    margin-bottom: 50px;
+  }
+}
+
+.resume__item {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  &::before {
+    content: "";
+    position: absolute;
+    right: -$spacing-inner-mobile;
+    bottom: 0;
+    left: -$spacing-inner-mobile;
+    height: 1px;
+    background-color: var(--border-color);
+  }
+
+  @include phablet {
+    margin-bottom: 40px;
+    padding: 0;
+
+    &::before {
+      display: none;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
