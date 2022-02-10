@@ -1,4 +1,4 @@
-export default (media) => (inCb, outCb) => {
+export default (media, inCb, outCb) => {
   const matchMedia = window.matchMedia(media);
 
   const listener = (evt) => {

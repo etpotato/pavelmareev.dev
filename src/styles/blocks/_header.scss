@@ -289,12 +289,18 @@
 }
 
 .header__contact-link {
+  position: relative;
   color: inherit;
   text-decoration: none;
+  outline-offset: 0.4em;
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: -0.8em;
+  }
 
   @media (hover: hover) {
-    position: relative;
-
     &::before {
       content: "";
       position: absolute;
