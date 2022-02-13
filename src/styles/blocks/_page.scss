@@ -8,7 +8,7 @@
   }
 
   @include laptop {
-    padding-left: 424px;
+    padding-left: 345px + ($spacing-outer-phablet * 2);
 
     &::before {
       content: "";
@@ -32,14 +32,26 @@
       background-size: 28px $border-radius;
       background-position:
         left center,
-        left 388px center,
-        left 412px center,
+        left (345px - $spacing-outer-phablet) center,
+        left (345px + $spacing-outer-phablet) center,
         right center;
       background-image:
         url("../img/nav-frame-left.svg"),
         url("../img/nav-frame-right.svg"),
         url("../img/nav-frame-left.svg"),
         url("../img/nav-frame-right.svg");
+    }
+  }
+
+  @include desktop {
+    padding-left: 400px + ($spacing-outer-phablet * 2);
+
+    &::after {
+      background-position:
+        left center,
+        left (400px - $spacing-outer-phablet) center,
+        left (400px + $spacing-outer-phablet) center,
+        right center;
     }
   }
 }
@@ -56,8 +68,12 @@
     top: 0;
     bottom: 0;
     left: 0;
-    width: 400px + ($spacing-outer-phablet * 2);
+    width: 345px + ($spacing-outer-phablet * 2);
     margin-bottom: 0;
+  }
+
+  @include desktop {
+    width: 400px + ($spacing-outer-phablet * 2);
   }
 }
 

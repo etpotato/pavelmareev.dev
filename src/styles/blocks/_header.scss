@@ -130,6 +130,7 @@
 
   @include laptop {
     position: static;
+    min-width: auto;
     padding: 115px 0;
     background-color: transparent;
     transform: none;
