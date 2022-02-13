@@ -1,0 +1,37 @@
+{% import '../macros.twig' as macros %}
+
+{% set contacts = [
+  {
+    name: '+7&nbsp;985 623-71-22',
+    link: 'tel:89856237122',
+    modif: 'tel',
+  },
+  {
+    name: 'mareev.pv@gmail.com',
+    link: 'mailto:mareev.pv@gmail.com',
+    modif: 'mail',
+  },
+  {
+    name: 'telegram',
+    link: 'https://t.me/etpotato',
+    modif: 'tg',
+  },
+  {
+    name: 'github',
+    link: 'https://github.com/etpotato',
+    modif: 'gh',
+  },
+]%}
+
+<section class="section contacts" id="contacts">
+  <div class="section__content contacts__content">
+    <h2 class="contacts__title h1">Свяжитесь со&nbsp;мной</h2>
+    <ul class="contacts__list">
+      {% for contact in contacts %}
+        <li class="contacts__item contacts__item--{{ contact.modif }}">
+          {{ macros.extlink('contacts__link h3', contact.link, contact.name) }}
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

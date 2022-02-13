@@ -330,20 +330,20 @@
     background-image: url("../img/hh.svg");
   }
 
-  &::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    border-radius: $border-radius-sm;
-    background-color: var(--text);
-    opacity: 0%;
-    transform: scale(0.8, 0);
-    transform-origin: 50% 100%;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    z-index: -1;
-  }
-
   @media (hover: hover) {
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: $border-radius-sm;
+      background-color: var(--text);
+      opacity: 0%;
+      transform: scale(0.8, 0);
+      transform-origin: 50% 100%;
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      z-index: -1;
+    }
+
     &:hover,
     &:focus {
       color: var(--text-invert);
