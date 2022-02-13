@@ -1,15 +1,14 @@
 .resume {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 25px;
 
   @include phablet {
     padding-top: 48px;
-    padding-bottom: 80px;
+    padding-bottom: 65px;
   }
 
   @include desktop {
     padding-top: 64px;
-    padding-bottom: 85px;
   }
 }
 
@@ -93,7 +92,7 @@
   @include phablet {
     display: grid;
     grid-template-columns: minmax(max-content, 1fr) repeat(4, 1fr);
-    margin-bottom: 40px;
+    margin-bottom: 56px;
     padding: 0;
 
     &::before {
@@ -297,5 +296,74 @@
 
   &:last-child {
     margin-bottom: 0;
+  }
+}
+
+.resume__link-wrap {
+  @include phablet {
+    padding-left: 20%;
+  }
+}
+
+.resume__link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+  outline: none;
+  margin-left: -($spacing-inner-mobile / 2);
+  padding: 15px ($spacing-inner-mobile / 2);
+  border-radius: $border-radius-sm;
+  isolation: isolate;
+  white-space: nowrap;
+  transition: color 0.3s ease-in-out;
+
+  &::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;
+    background-image: url("../img/hh.svg");
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: $border-radius-sm;
+    background-color: var(--text);
+    opacity: 0%;
+    transform: scale(0.8, 0);
+    transform-origin: 50% 100%;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: -1;
+  }
+
+  @media (hover: hover) {
+    &:hover,
+    &:focus {
+      color: var(--text-invert);
+
+      &::after {
+        opacity: 100%;
+        transform: scale(1);
+      }
+    }
+  }
+
+  @include phablet {
+    margin-left: -$spacing-inner-mobile;
+    padding: 15px $spacing-inner-mobile;
+  }
+
+  @include desktop {
+    &::before {
+      width: 40px;
+      height: 40px;
+    }
   }
 }
