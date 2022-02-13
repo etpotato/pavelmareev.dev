@@ -172,11 +172,15 @@
   isolation: isolate;
 
   @include laptop {
-    margin-bottom: 10px;
+    margin-bottom: 14px;
 
     &:last-child {
       margin-bottom: 0;
     }
+  }
+
+  @include desktop {
+    margin-bottom: 10px;
   }
 }
 
