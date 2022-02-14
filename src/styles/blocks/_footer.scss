@@ -1,0 +1,48 @@
+.footer {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+
+  @include phablet {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  @include desktop {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+.footer__copy {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin: 0;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid currentColor;
+  }
+
+  @include phablet {
+    padding-left: 20%;
+
+    &::before {
+      width: 8px;
+      height: 8px;
+    }
+  }
+
+  @include desktop {
+    &::before {
+      width: 10px;
+      height: 10px;
+    }
+  }
+}

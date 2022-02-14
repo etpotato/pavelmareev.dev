@@ -1,18 +1,18 @@
 .contacts {
   padding-top: 40px;
-  padding-bottom: 40px;
+  padding-bottom: 28px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
   overflow: hidden;
 
   @include phablet {
     padding-top: 48px;
-    padding-bottom: 88px;
+    padding-bottom: 76px;
   }
 
   @include desktop {
     padding-top: 64px;
-    padding-bottom: 120px;
+    padding-bottom: 108px;
   }
 }
 
@@ -26,7 +26,7 @@
   }
 
   @include desktop {
-    margin-bottom: 142px;
+    margin-bottom: 160px;
   }
 }
 
