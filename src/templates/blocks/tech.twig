@@ -49,22 +49,24 @@
   },
 ]%}
 
-<section class="page__section section tech" id="tech">
-  <div class="section__content tech__content">
-    <h2 class="tech__title h2">Владею популярными технологиями и&nbsp;инструментами</h2>
-    <div class="tech__wrap">
-      <ul class="tech__icon-list">
-        {% for techItem in techItems %}
-          <li class="tech__icon-item" title="{{ techItem.name }}">
-            <img class="tech__icon-img" src="{{ techItem.src }}" width="38" height="38" alt="{{ techItem.name }}">
-          </li>
-        {% endfor %}
-      </ul>
-      <ul class="tech__name-list">
-        {% for techItem in techItems %}
-          <li class="tech__name-item p2">{{ techItem.name }}{{ loop.last ? "" : ", " }}</li>
-        {% endfor %}
-      </ul>
+<section class="page__section js-nav-section" id="tech">
+  <div class="section tech">
+    <div class="section__content tech__content">
+      <h2 class="tech__title h2">Владею популярными технологиями и&nbsp;инструментами</h2>
+      <div class="tech__wrap">
+        <ul class="tech__icon-list">
+          {% for techItem in techItems %}
+            <li class="tech__icon-item" title="{{ techItem.name }}">
+              <img class="tech__icon-img" src="{{ techItem.src }}" width="38" height="38" alt="{{ techItem.name }}">
+            </li>
+          {% endfor %}
+        </ul>
+        <ul class="tech__name-list">
+          {% for techItem in techItems %}
+            <li class="tech__name-item p2">{{ techItem.name }}{{ loop.last ? "" : ", " }}</li>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
 </section>

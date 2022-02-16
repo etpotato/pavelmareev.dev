@@ -40,56 +40,58 @@
   },
 ]%}
 
-<section class="page__section section resume" id="resume">
-  <div class="section__content resume__content">
-    <div class="resume__title-wrap">
-      <h2 class="resume__title h2">Опыт работы</h2>
-      <p class="resume__experience p2 js-timer" data-timer-start="2021-04">1 год</p>
-    </div>
-    <ul class="resume__list">
-      {% for job in jobs %}
-        <li class="resume__item">
-          <h3 class="resume__item-title p1">{{ job.name }}</h3>
-          {{ macros.extlink('resume__item-link p2', job.href, job.link) }}
-          <p class="resume__position p1">{{ job.position }}</p>
-          <p class="resume__time p2">
-            <span class="resume__time-boundaries">
-              <span class="resume__time-boundary">{{ job.start }}&nbsp;&mdash;</span>
-              <span class="resume__time-boundary">{{ job.end }}</span>
-            </span>
-            {% if loop.first %}
-              <span class="resume__time-experience js-timer" data-timer-start="2021-10">
-            {% else %}
-              <span class="resume__time-experience">
-            {% endif %}
-            {{ job.experience }}</span>
-          </p>
-          <div class="resume__task-wrap js-dropdown">
-            <button
-              class="resume__task-button js-dropdown-button active"
-              id="resume-task-button-{{ loop.index }}"
-              aria-controls="resume-task-list-{{ loop.index }}"
-              aria-expanded="true"
-              type="button">
-              <span class="resume__task-button-text p2">{{ job.taskTitle }}</span>
-            </button>
-            <div
-              class="resume__task-list-wrap js-dropdown-content"
-              id="resume-task-list-{{ loop.index }}"
-              aria-labelledby="resume-task-button-{{ loop.index }}"
-              aria-hidden="false">
-              <ul class="resume__task-list">
-                {% for task in job.tasks %}
-                  <li class="resume__task-item p2">{{ task }}</li>
-                {% endfor %}
-              </ul>
+<section class="page__section js-nav-section" id="resume">
+  <div class="section resume">
+    <div class="section__content resume__content">
+      <div class="resume__title-wrap">
+        <h2 class="resume__title h2">Опыт работы</h2>
+        <p class="resume__experience p2 js-timer" data-timer-start="2021-04">1 год</p>
+      </div>
+      <ul class="resume__list">
+        {% for job in jobs %}
+          <li class="resume__item">
+            <h3 class="resume__item-title p1">{{ job.name }}</h3>
+            {{ macros.extlink('resume__item-link p2', job.href, job.link) }}
+            <p class="resume__position p1">{{ job.position }}</p>
+            <p class="resume__time p2">
+              <span class="resume__time-boundaries">
+                <span class="resume__time-boundary">{{ job.start }}&nbsp;&mdash;</span>
+                <span class="resume__time-boundary">{{ job.end }}</span>
+              </span>
+              {% if loop.first %}
+                <span class="resume__time-experience js-timer" data-timer-start="2021-10">
+              {% else %}
+                <span class="resume__time-experience">
+              {% endif %}
+              {{ job.experience }}</span>
+            </p>
+            <div class="resume__task-wrap js-dropdown">
+              <button
+                class="resume__task-button js-dropdown-button active"
+                id="resume-task-button-{{ loop.index }}"
+                aria-controls="resume-task-list-{{ loop.index }}"
+                aria-expanded="true"
+                type="button">
+                <span class="resume__task-button-text p2">{{ job.taskTitle }}</span>
+              </button>
+              <div
+                class="resume__task-list-wrap js-dropdown-content"
+                id="resume-task-list-{{ loop.index }}"
+                aria-labelledby="resume-task-button-{{ loop.index }}"
+                aria-hidden="false">
+                <ul class="resume__task-list">
+                  {% for task in job.tasks %}
+                    <li class="resume__task-item p2">{{ task }}</li>
+                  {% endfor %}
+                </ul>
+              </div>
             </div>
-          </div>
-        </li>
-      {% endfor %}
-    </ul>
-    <div class="resume__link-wrap">
-      {{ macros.extlink('resume__link p2', 'https://hh.ru/resume/e2a4d560ff08e782840039ed1f62357241794f', 'Резюме на&nbsp;хэдхантере') }}
+          </li>
+        {% endfor %}
+      </ul>
+      <div class="resume__link-wrap">
+        {{ macros.extlink('resume__link p2', 'https://hh.ru/resume/e2a4d560ff08e782840039ed1f62357241794f', 'Резюме на&nbsp;хэдхантере') }}
+      </div>
     </div>
   </div>
 </section>

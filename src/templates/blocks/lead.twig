@@ -3,30 +3,31 @@
   'Я&nbsp;создаю адаптивные, кроссбраузерные, доступные интерфейсы. Использую прогрессивное улучшение и&nbsp;подход mobile first. Умею оптимизировать вёрстку и&nbsp;скорость загрузки страниц.',
   'Работаю с&nbsp;популярными библиотеками. Понимаю принципы работы http и&nbsp;REST API. Имею опыт разработки по&nbsp;гибким методологиям.',
 ]%}
-
-<div class="page__section section lead">
-  <div class="section__content lead__content">
-    <h1 class="lead__title h1">
-      Привет, <br>
-      меня зовут Павел. <br>
-      Я фронтенд-разработчик.
-    </h1>
-    <picture class="lead__picture">
-      <source
-        srcset="img/avatar.webp 1x,
-                img/avatar@2x.webp 2x"
-        type="image/webp">
-      <img
-        class="lead__img"
-        srcset="img/avatar.jpg 1x,
-                img/avatar@2x.jpg 2x"
-        src="img/avatar.jpg"
-        alt="Павел Мареев">
-    </picture>
-    <div class="lead__text">
-      {% for textItem in textItems %}
-       <p class="lead__parag">{{ textItem }}</p>
-      {% endfor %}
+<div class="page__section js-nav-anchor">
+  <div class="section lead">
+    <div class="section__content lead__content">
+      <h1 class="lead__title h1">
+        Привет, <br>
+        меня зовут Павел. <br>
+        Я фронтенд-разработчик.
+      </h1>
+      <picture class="lead__picture">
+        <source
+          srcset="img/avatar.webp 1x,
+                  img/avatar@2x.webp 2x"
+          type="image/webp">
+        <img
+          class="lead__img"
+          srcset="img/avatar.jpg 1x,
+                  img/avatar@2x.jpg 2x"
+          src="img/avatar.jpg"
+          alt="Павел Мареев">
+      </picture>
+      <div class="lead__text">
+        {% for textItem in textItems %}
+        <p class="lead__parag">{{ textItem }}</p>
+        {% endfor %}
+      </div>
     </div>
   </div>
 </div>

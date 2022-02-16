@@ -78,13 +78,13 @@
 }
 
 .page__section {
-  margin-bottom: $spacing-outer-mobile;
+  padding-bottom: $spacing-outer-mobile;
 
   &:last-child {
-    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   @include phablet {
-    margin-bottom: $spacing-outer-phablet;
+    padding-bottom: $spacing-outer-phablet;
   }
 }

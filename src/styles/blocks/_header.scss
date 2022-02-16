@@ -128,6 +128,16 @@
     transform: rotateY(180deg);
   }
 
+  @include phablet {
+    &::before {
+      left: 4px;
+    }
+
+    &::after {
+      right: 4px;
+    }
+  }
+
   @include laptop {
     position: static;
     min-width: auto;
@@ -154,6 +164,7 @@
   list-style: none;
   overflow-x: auto;
   scrollbar-width: none;
+  scroll-behavior: smooth;
 
   &::-webkit-scrollbar {
     display: none;

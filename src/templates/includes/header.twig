@@ -36,11 +36,11 @@
       <span class="header__lead-name">Павел Мареев</span>
       <span class="header__lead-job p2">frontend-разработчик</span>
     </p>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
+    <nav class="header__nav js-nav">
+      <ul class="header__nav-list js-nav-list">
         {% for item in navItems %}
           <li class="header__nav-item">
-            <a class="header__nav-link{{ loop.first ? "" : "" }}" href="#{{ item.id }}">
+            <a class="header__nav-link js-nav-link" href="#{{ item.id }}">
               {{ item.name }}
             </a>
           </li>

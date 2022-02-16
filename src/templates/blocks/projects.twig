@@ -67,57 +67,59 @@
   },
 ]%}
 
-<section class="page__section section section--accent projects" id="projects">
-  <div class="section__content projects__content">
-    <div class="projects__title-wrap">
-      <h2 class="projects__title h2">Список моих проектов</h2>
-      <p class="projects__time">
-        <time class="projects__time-start p2" datetime="2021">2021</time> &mdash; <time class="projects__time-start p2" datetime="2022">2022</time>
-      </p>
-    </div>
-    <ul class="projects__list">
-      {% for project in projects %}
-        <li class="projects__item">
-          <article class="projects__item-article">
-            <h3 class="projects__item-title">
-              <span class="projects__item-counter"></span>
-              <span class="projects__item-title-text h3">{{ project.name }}</span>
-            </h3>
-            <p class="projects__item-desc">{{ project.desc }}</p>
-            <picture class="projects__item-picture">
-              {% if loop.first %}
-                <source
-                  media="(min-width: 768px)"
-                  srcset="{{ project.img.desktop }}">
-              {% else %}
-                <source
-                  media="(min-width: 768px)"
-                  type="img/webp"
-                  srcset="{{ project.img.webpDesktop }}">
-                <source
-                  media="(min-width: 768px)"
-                  srcset="{{ project.img.desktop }}">
-                <source
-                  type="img/webp"
-                  srcset="{{ project.img.webpMobile }}">
-              {% endif %}
-              <img
-                class="projects__item-img"
-                src="{{ project.img.mobile }}"
-                alt="{{ projects.name }}">
-            </picture>
-            {% set linkContent = '<span class="projects__item-button p2">Перейти на сайт <span class="projects__item-arrows">
-                  <span class="projects__item-arrows-wrap">
-                    <svg class="projects__item-arrow-svg"><use href="#svg-arrow"></use></svg>
-                    <svg class="projects__item-arrow-svg"><use href="#svg-arrow"></use></svg>
+<section class="page__section js-nav-section" id="projects">
+  <div class="section section--accent projects">
+    <div class="section__content projects__content">
+      <div class="projects__title-wrap">
+        <h2 class="projects__title h2">Список моих проектов</h2>
+        <p class="projects__time">
+          <time class="projects__time-start p2" datetime="2021">2021</time> &mdash; <time class="projects__time-start p2" datetime="2022">2022</time>
+        </p>
+      </div>
+      <ul class="projects__list">
+        {% for project in projects %}
+          <li class="projects__item">
+            <article class="projects__item-article">
+              <h3 class="projects__item-title">
+                <span class="projects__item-counter"></span>
+                <span class="projects__item-title-text h3">{{ project.name }}</span>
+              </h3>
+              <p class="projects__item-desc">{{ project.desc }}</p>
+              <picture class="projects__item-picture">
+                {% if loop.first %}
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="{{ project.img.desktop }}">
+                {% else %}
+                  <source
+                    media="(min-width: 768px)"
+                    type="img/webp"
+                    srcset="{{ project.img.webpDesktop }}">
+                  <source
+                    media="(min-width: 768px)"
+                    srcset="{{ project.img.desktop }}">
+                  <source
+                    type="img/webp"
+                    srcset="{{ project.img.webpMobile }}">
+                {% endif %}
+                <img
+                  class="projects__item-img"
+                  src="{{ project.img.mobile }}"
+                  alt="{{ projects.name }}">
+              </picture>
+              {% set linkContent = '<span class="projects__item-button p2">Перейти на сайт <span class="projects__item-arrows">
+                    <span class="projects__item-arrows-wrap">
+                      <svg class="projects__item-arrow-svg"><use href="#svg-arrow"></use></svg>
+                      <svg class="projects__item-arrow-svg"><use href="#svg-arrow"></use></svg>
+                    </span>
                   </span>
-                </span>
-              </span>'
-            %}
-            {{ macros.extlink('projects__item-link', project.link, linkContent) }}
-          </article>
-        </li>
-      {% endfor %}
-    </ul>
+                </span>'
+              %}
+              {{ macros.extlink('projects__item-link', project.link, linkContent) }}
+            </article>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </section>

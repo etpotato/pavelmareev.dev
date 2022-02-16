@@ -67,12 +67,12 @@ const Dropdown = (dropdownElem) => {
 const dropdowns = dropdownElements.map((item) => new Dropdown(item));
 const resizeAll = debounce(() => dropdowns.forEach((dropdown) => dropdown.resize()), 300);
 
-export const init = () => {
+export const initDropdown = () => {
   dropdowns.forEach((dropdown) => dropdown.init());
   window.addEventListener('resize', resizeAll);
 };
 
-export const destroy = () => {
+export const destroyDropdown = () => {
   dropdowns.forEach((dropdown) => dropdown.destroy());
   window.removeEventListener('resize', resizeAll);
 };
