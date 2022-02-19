@@ -6,8 +6,10 @@
     desc: 'Редизайн десктоп-версии, поддержка и&nbsp;развитие сайта одного из&nbsp;самых посещаемых новостных изданий.',
     link: 'https://lenta.ru/',
     img: {
-      mobile: 'img/lenta-mobile.svg',
-      desktop: 'img/lenta-desktop.svg',
+      mobile: 'img/lenta-mobile.png',
+      desktop: 'img/lenta-desktop.png',
+      webpMobile: 'img/lenta-mobile.webp',
+      webpDesktop: 'img/lenta-desktop.webp',
     },
   },
   {
@@ -86,22 +88,16 @@
               </h3>
               <p class="projects__item-desc">{{ project.desc }}</p>
               <picture class="projects__item-picture">
-                {% if loop.first %}
-                  <source
-                    media="(min-width: 768px)"
-                    srcset="{{ project.img.desktop }}">
-                {% else %}
-                  <source
-                    media="(min-width: 768px)"
-                    type="img/webp"
-                    srcset="{{ project.img.webpDesktop }}">
-                  <source
-                    media="(min-width: 768px)"
-                    srcset="{{ project.img.desktop }}">
-                  <source
-                    type="img/webp"
-                    srcset="{{ project.img.webpMobile }}">
-                {% endif %}
+                <source
+                  media="(min-width: 768px)"
+                  type="img/webp"
+                  srcset="{{ project.img.webpDesktop }}">
+                <source
+                  media="(min-width: 768px)"
+                  srcset="{{ project.img.desktop }}">
+                <source
+                  type="img/webp"
+                  srcset="{{ project.img.webpMobile }}">
                 <img
                   class="projects__item-img"
                   src="{{ project.img.mobile }}"
