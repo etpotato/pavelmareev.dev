@@ -129,6 +129,8 @@
   }
 
   @include phablet {
+    padding: $spacing-outer-phablet;
+
     &::before {
       left: 4px;
     }
@@ -335,5 +337,19 @@
       left: 0;
       width: 100%;
     }
+  }
+}
+
+.header.no-js {
+  position: relative;
+  padding-top: 74px;
+
+  .header__nav {
+    transform: none;
+  }
+
+  @include laptop {
+    position: fixed;
+    padding-top: $spacing-outer-phablet;
   }
 }
