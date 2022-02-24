@@ -37,6 +37,7 @@ const scrollNavToLink = (link) => {
     + link.getBoundingClientRect().x - PADDING_MOBILE * 2;
   navList.scroll({
     left: scrollAmount,
+    behavior: 'smooth',
   });
 };
 
@@ -113,6 +114,7 @@ const getLinkClickHandler = (deviceType) => {
     window.addEventListener('scroll', debouncedScrollListener);
     window.scroll({
       top: windowScrollAmount,
+      behavior: 'smooth',
     });
 
     if (deviceType === DEVICES.MOBILE) scrollNavToLink(link);
