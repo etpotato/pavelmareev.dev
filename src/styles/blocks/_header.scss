@@ -154,16 +154,9 @@
   }
 }
 
-.header__nav-list {
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: start;
-  grid-gap: 8px;
-  margin: 0;
-  padding: $spacing-outer-mobile;
+.header__nav-scroll {
   border-radius: $border-radius;
   background-color: var(--bg);
-  list-style: none;
   overflow-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
@@ -171,6 +164,22 @@
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @include laptop {
+    border-radius: 0;
+    overflow: visible;
+  }
+}
+
+.header__nav-list {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: start;
+  grid-gap: 8px;
+  width: max-content;
+  margin: 0;
+  padding: $spacing-outer-mobile;
+  list-style: none;
 
   @include laptop {
     display: block;

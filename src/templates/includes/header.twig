@@ -37,15 +37,17 @@
       <span class="header__lead-job p2">frontend-developer</span>
     </p>
     <nav class="header__nav js-nav">
-      <ul class="header__nav-list js-nav-list">
-        {% for item in navItems %}
-          <li class="header__nav-item">
-            <a class="header__nav-link js-nav-link" href="#{{ item.id }}">
-              {{ item.name }}
-            </a>
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="header__nav-scroll js-nav-list">
+        <ul class="header__nav-list js-nav-list">
+          {% for item in navItems %}
+            <li class="header__nav-item">
+              <a class="header__nav-link js-nav-link" href="#{{ item.id }}">
+                {{ item.name }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
     </nav>
     <ul class="header__contact-list">
       {% for contactItem in contactItems %}
