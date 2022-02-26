@@ -105,5 +105,10 @@
 }
 
 .tech__name-item {
-  display: inline;
+  display: inline-block;
+  margin-right: 0.1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
 }
