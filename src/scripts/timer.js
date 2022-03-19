@@ -1,18 +1,18 @@
 import getTimePeriod from './utils/get-time-period';
-import getCountableName from './utils/get-countable-name';
+import getEnCountableName from './utils/get-en-countable-name';
 
-const YEAR_NAMES = ['год', 'года', 'лет'];
-const MONTH_NAMES = ['месяц', 'месяца', 'месяцев'];
+const YEAR_NAMES = ['year', 'years'];
+const MONTH_NAMES = ['month', 'months'];
 
 export const getPeriodInText = (date, anotherDate) => {
   const [years, months] = getTimePeriod(date, anotherDate);
   const yearPart = years > 0
-    ? `${years} ${getCountableName(years, YEAR_NAMES)}`
+    ? `${years} ${getEnCountableName(years, YEAR_NAMES)}`
     : '';
   const monthPart = months > 0
-    ? `${months} ${getCountableName(months, MONTH_NAMES)}`
+    ? `${months} ${getEnCountableName(months, MONTH_NAMES)}`
     : '';
-  const and = yearPart && monthPart ? ' и ' : '';
+  const and = yearPart && monthPart ? ' and ' : '';
   return yearPart + and + monthPart;
 };
 
