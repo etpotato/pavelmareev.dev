@@ -17,14 +17,17 @@ describe('time counter', () => {
     document.body.innerHTML = `
       <span class="js-timer" id="timer-1" data-timer-start="2020-01">blabla</span>
       <span class="js-timer" id="timer-2" data-timer-start="2021-08">blabla</span>
+      <span class="js-year" id="timer-3">blabla</span>
     `;
 
     timer(today);
 
     const timer1 = document.querySelector('#timer-1');
     const timer2 = document.querySelector('#timer-2');
+    const timer3 = document.querySelector('#timer-3');
 
     expect(timer1.textContent).toBe('2 года и 1 месяц');
     expect(timer2.textContent).toBe('6 месяцев');
+    expect(timer3.textContent).toBe('2022');
   });
 });

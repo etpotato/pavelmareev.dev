@@ -18,10 +18,16 @@ export const getPeriodInText = (date, anotherDate) => {
 
 export default (today) => {
   const elements = [...document.querySelectorAll('.js-timer')];
+  const yearElements = [...document.querySelectorAll('.js-year')];
 
   elements.forEach((element) => {
     const start = new Date(element.dataset.timerStart);
     // eslint-disable-next-line no-param-reassign
     element.textContent = getPeriodInText(start, today);
+  });
+
+  yearElements.forEach((element) => {
+    // eslint-disable-next-line no-param-reassign
+    element.textContent = today.getFullYear();
   });
 };
