@@ -8,9 +8,11 @@ COPY package*.json ./
 
 RUN npm ci
 
-RUN npm run build
-
 COPY . .
+
+RUN npm run test
+
+RUN npm run build
 
 ENV PORT=8080
 

@@ -2,8 +2,9 @@
   "private": true,
   "scripts": {
     "start": "webpack serve",
-    "test": "jest --watch",
-    "build": "cross-env NODE_ENV=production webpack & jest",
+    "test": "jest",
+    "test-dev": "jest --watch",
+    "build": "cross-env NODE_ENV=production webpack",
     "build-dev": "webpack & jest",
     "server": "nodemon app.js",
     "stats": "cross-env NODE_ENV=production webpack --json build-stats.json"
