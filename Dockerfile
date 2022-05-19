@@ -2,6 +2,8 @@ FROM node:16-alpine
 
 WORKDIR /app
 
+RUN npm install pm2 -g
+
 COPY package*.json ./
 
 RUN npm ci
@@ -10,6 +12,8 @@ COPY . .
 
 RUN npm run build
 
-ENV PORT=5000
+ENV PORT=8080
 
-CMD ["npm", "run", "server"]
+EXPOSE 8080
+
+CMD ["pm2-runtime", "ecosystem.config.js"]
